@@ -11,7 +11,8 @@ const WeatherCard = ({ data, title, cardType, city }: WeatherCardProps) => {
   }
 
   const formatHourly = (date: string) => {
-    const dateTime = new Date(date)
+    let date_temp = date+':00.000Z'
+    const dateTime = new Date(date_temp)
     const options: Intl.DateTimeFormatOptions = { hour: '2-digit', minute: '2-digit' };
     return dateTime.toLocaleTimeString([], options)
   }
@@ -43,7 +44,7 @@ const WeatherCard = ({ data, title, cardType, city }: WeatherCardProps) => {
         {
           cardType === 'current' && (
             <Typography component="p" sx={{ minHeight: "14px" }}>
-              {formatCurrentTime()} at {city.city}, {city.countryName} ({city.countryCode})
+              {formatCurrentTime()} at {city.city}, {city.countryName}
             </Typography>
           )
         }
@@ -56,7 +57,7 @@ const WeatherCard = ({ data, title, cardType, city }: WeatherCardProps) => {
               {weather && <Icon />} {data.temperature}
             </Typography>
             <Typography sx={{ fontSize: 16, lineHeight: 2, color: 'info.main', fontWeight: 'medium' }}>
-              {weather ? weather : null}
+              {weather}
             </Typography>
           </Box>
 

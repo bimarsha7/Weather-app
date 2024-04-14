@@ -119,16 +119,16 @@ export default function Homepage() {
         <Container maxWidth="lg">
           <Grid container spacing={2}>
             <Grid item xs={12} md={4} lg={3} xl="auto">
-              <WeatherCard data={currentWeather} title={"Current Weather"} cardType={"current"} city={currentCity} />
+              <WeatherCard data={currentWeather} title={"Current"} cardType={"current"} city={currentCity} />
             </Grid>
             <Grid item xs={12} md={8} lg={8} xl="auto">
-              <WeatherCard data={hourlyWeather} title={"Hourly Forecast"} cardType={"hourly"} city={currentCity} />
+              <WeatherCard data={hourlyWeather} title={"Hourly"} cardType={"hourly"} city={currentCity} />
             </Grid>
           </Grid>
 
           <Grid container spacing={2} >
             <Grid item xs={12} md={12} lg={12} xl="auto">
-              <WeatherCard data={dailyWeather} title={"Multi-day Forecast."} cardType={"multi-day"} city={currentCity} />
+              <WeatherCard data={dailyWeather} title={"Daily"} cardType={"multi-day"} city={currentCity} />
             </Grid>
           </Grid>
         </Container>
