@@ -116,18 +116,18 @@ export default function Homepage() {
     <NoSsr>
       <RootLayout >
         <ButtonAppBar />
-        <Container maxWidth="lg">
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={4} lg={3} xl="auto">
+        <Container maxWidth="md">
+          <Grid container spacing={0}>
+            <Grid item xs={12} md={12} lg={12} xl={12}>
               <WeatherCard data={currentWeather} title={"Current"} cardType={"current"} city={currentCity} />
             </Grid>
-            <Grid item xs={12} md={8} lg={8} xl="auto">
+            <Grid item xs={12} md={12} lg={12} xl={12}>
               <WeatherCard data={hourlyWeather} title={"Hourly"} cardType={"hourly"} city={currentCity} />
             </Grid>
           </Grid>
 
-          <Grid container spacing={2} >
-            <Grid item xs={12} md={12} lg={12} xl="auto">
+          <Grid container spacing={0} >
+            <Grid item xs={12} md={12} lg={12} xl={12}>
               <WeatherCard data={dailyWeather} title={"Daily"} cardType={"multi-day"} city={currentCity} />
             </Grid>
           </Grid>
