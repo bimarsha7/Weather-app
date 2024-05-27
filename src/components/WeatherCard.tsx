@@ -140,12 +140,12 @@ const WeatherCard = ({ data, title, cardType, city }: WeatherCardProps) => {
                 <Typography variant="h5" sx={{ minHeight: "20px", fontSize: 16, mb: 1.5 }}>
                   {formatHourly(data.time_hourly[index])}
                 </Typography>
-                <Typography sx={{ minHeight: "20px", fontSize: 20, fontWeight: 'medium', mb: -0.4 }}>
+                <Typography sx={{ minHeight: "20px", fontSize: 20, fontWeight: 'medium', mb: 0.5 }}>
                   {each_hour_temp}°C
                 </Typography>
-                <Typography sx={{ fontSize: 12, lineHeight: 2, color: 'info.main', fontWeight: 'medium', mb: 2 }}>
+                <Grid sx={{ fontSize: '11.5px', color: 'info.main', fontWeight: 'medium', cursor: 'pointer', maxWidth: 80, mb: 1.5 }}>
                   {weatherCodeMapper?.[data?.weather_code_hourly?.[index]]}
-                </Typography>
+                </Grid>
                 <Grid sx={{ fontSize: '14px', color: 'success.main', cursor: 'pointer' }}>
                   <AirIcon sx={{ fontSize: 14 }} /> {data.wind_speed_hourly?.[index]}km/h
                 </Grid>
@@ -180,10 +180,9 @@ const WeatherCard = ({ data, title, cardType, city }: WeatherCardProps) => {
                   {each_hour_temp}°C
                 </Typography>
 
-                <Typography sx={{ fontSize: 12, lineHeight: 2, color: 'info.main', fontWeight: 'medium' }}>
+                <Grid sx={{ fontSize: '11.5px', color: 'info.main', fontWeight: 'medium', cursor: 'pointer', maxWidth: 80, mb: 1.5 }}>
                   {weatherCodeMapper?.[data?.weather_code_daily?.[index]]}
-                </Typography>
-
+                </Grid>
                 <Grid sx={{ fontSize: '14px', color: 'success.main', fontWeight: 'medium', cursor: 'pointer' }}><AirIcon sx={{ fontSize: 14 }} /> {data?.wind_speed_10m_max?.[index]}km/h</Grid>
                 <Grid sx={{ fontSize: '14px', color: 'secondary.main', fontWeight: 'medium', cursor: 'pointer' }}><WaterDropIcon sx={{ fontSize: 14 }} />  {data?.precipitation_probability_max?.[index]}%</Grid>
               </Box>
